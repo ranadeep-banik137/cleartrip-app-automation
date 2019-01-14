@@ -122,6 +122,9 @@ public class CleartripDashboard {
 	@FindBy (id = "Childrens")
 	private WebElement childrenSelector;
 	
+	/**
+	 * clicks sign-in button at the upper right corner of the dashboard page for login purpose
+	 */
 	public void clickSignInButton() {
 		loginMenuContainer.click();
 		this.wait.until(ExpectedConditions.visibilityOf(signInBlock));
@@ -130,19 +133,33 @@ public class CleartripDashboard {
 		Assert.assertTrue(loginContextBox.isDisplayed());
 	}
 	
+	/**
+	 * Login credentials to be entered using username & password
+	 * @param userName
+	 * @param password
+	 */
 	public void enterCredentials(final String userName, final String password) {
 		ForceWait.pause(3);
 		this.wait.until(ExpectedConditions.elementToBeClickable(userNameInput));
-		userNameInput.sendKeys(userName);
-		passwordInput.sendKeys(password);
-		if (!rememberMeCheckbox.isEnabled()) {
-			rememberMeCheckbox.click();
+		if (userName != null && password != null) {
+			userNameInput.sendKeys(userName);
+			passwordInput.sendKeys(password);
+			if (!rememberMeCheckbox.isEnabled()) {
+				rememberMeCheckbox.click();
+			}
+			signinButton.click();
+			wait.until(ExpectedConditions.visibilityOf(userAccountLink));
+			Assert.assertEquals(userAccountLink.getText(), userName);
+		} else {
+			throw new NullPointerException("UserName & Password provided is null");
 		}
-		signinButton.click();
-		wait.until(ExpectedConditions.visibilityOf(userAccountLink));
-		Assert.assertEquals(userAccountLink.getText(), userName);
 	}
 	
+	/**
+	 * Directs to sign-in box after clicking sign-in button
+	 * @param userName
+	 * @param password
+	 */
 	public void enterLoginCredentialsAfterClickingOnSiginButton(final String userName, final String password) {
 		if (loginMenuContainer.getText().contains("Your trips")) {
 		clickSignInButton();
@@ -150,6 +167,10 @@ public class CleartripDashboard {
 		}
 	}
 	
+	/**
+	 * Change country on the dashboard of cleartrip app
+	 * @param country
+	 */
 	public void changeCountry(final String country) {
 		changeCountryLink.click();
 		wait.until(ExpectedConditions.visibilityOf(countryForm));
@@ -160,12 +181,18 @@ public class CleartripDashboard {
 		}
 	}
 	
+	/**
+	 * click on one-way button at of cleartrip dashboard
+	 */
 	public void clickOnOneWayRadioButton() {
 		if (!oneWayRadioButton.isEnabled()) {
 			oneWayRadioButton.click();
 		}
 	}
 	
+	/**
+	 * click on two-way button at of cleartrip dashboard
+	 */
 	public void clickOnRoundTripRadioButton() {
 		roundTripRadioButton.click();
 		if (!roundTripRadioButton.isEnabled()) {
@@ -173,12 +200,19 @@ public class CleartripDashboard {
 		}
 	}
 	
+	/**
+	 * click on multi-city button at of cleartrip dashboard
+	 */
 	public void clickOnMultiCityRadioButton() {
 		if (!multiCityRadioButton.isEnabled()) {
 			multiCityRadioButton.click();
 		}
 	}
 	
+	/**
+	 * Select airport from the airport suggestion drop down
+	 * @param departureAirportName
+	 */
 	public void selectAirportFromSuggetionList(final String departureAirportName) {
 		wait.until(ExpectedConditions.visibilityOfAllElements(airportSuggestionList));
 		for (WebElement airportSuggestion : airportSuggestionList) {
@@ -188,6 +222,10 @@ public class CleartripDashboard {
 		}
 	}
 	
+	/**
+	 * Enter departure airport name at the from tag text box
+	 * @param departureAirportName
+	 */
 	public void enterDepatureAirportName(final String departureAirportName) {
 		fromTag.clear();
 		fromTag.click();
@@ -195,6 +233,10 @@ public class CleartripDashboard {
 		selectAirportFromSuggetionList(departureAirportName);
 	}
 	
+	/**
+	 * enter arrival airport name at the 'To' tagged text box
+	 * @param arrivalAirportName
+	 */
 	public void enterArrivalAirportName(final String arrivalAirportName) {
 		toTag.clear();
 		toTag.click();
@@ -202,23 +244,38 @@ public class CleartripDashboard {
 		selectAirportFromSuggetionList(arrivalAirportName);
 	}
 	
+	/**
+	 * Enter travel starting date
+	 * @param date
+	 */
 	public void enterTravelDate(final String date) {
 		departDateSelector.click();
 		this.wait.until(ExpectedConditions.visibilityOf(fullCalenderLocator));
 		this.calendarUtil.selectDate(date);
 	}
 	
+	/**
+	 * Enter retrun date for round trip
+	 * @param date
+	 */
 	public void enterReturnDate(final String date) {
 		returnDateSelector.click();
 		this.wait.until(ExpectedConditions.visibilityOf(fullCalenderLocator));
 		this.calendarUtil.selectDate(date);
 	}
 	
+	/**
+	 * Click search flights button at the dashboard
+	 */
 	public void clickSearchFlights() {
 		searchButton.click();
-		LOGGER.info("Searching for Flight........");
+		LOGGER.info("Searching for flights........");
 	}
 	
+	/**
+	 * Enter no of infants, children, adults.
+	 * Data to be fetched from the excel data sheet. (By default)
+	 */
 	public void enterNoOfPerson() {
 		String noOfAdults = String.valueOf(excelUtil.readDefaultExcel().readInt(ExcelKeywords.Sheet.TWO_WAY, ExcelKeywords.Headers.ADULTS_COUNT, 1));
 		String noOfInfants = String.valueOf(excelUtil.readDefaultExcel().readInt(ExcelKeywords.Sheet.TWO_WAY, ExcelKeywords.Headers.INFANT_COUNT, 1));

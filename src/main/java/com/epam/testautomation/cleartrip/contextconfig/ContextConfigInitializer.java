@@ -9,7 +9,7 @@ import com.epam.testautomation.cleartrip.utils.DriverUtil;
 
 @Configuration
 @ComponentScan(basePackages = "com.epam.testautomation.cleartrip")
-public class LoginContextConfig {
+public class ContextConfigInitializer {
 	
 	private static String browser;
 	

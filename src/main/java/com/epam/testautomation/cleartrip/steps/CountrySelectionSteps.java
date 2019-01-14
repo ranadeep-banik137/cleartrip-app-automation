@@ -7,7 +7,7 @@ public class CountrySelectionSteps extends BaseStep {
 	@And("^Select country as \"([^\"]*)\"$")
 	public void selectCountry(String country) {
 		dashboard.changeCountry(country);
-		screenshotUtil.captureScreenshotOfCurrentPage();
+		screenshotUtil.captureScreenshotWithFileName(this.getClass().getSimpleName());
 	}
 	
 }

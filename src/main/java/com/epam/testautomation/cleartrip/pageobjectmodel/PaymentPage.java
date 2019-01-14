@@ -21,6 +21,7 @@ import org.testng.Assert;
 import com.epam.testautomation.cleartrip.constant.Index;
 import com.epam.testautomation.cleartrip.constant.PropertyKeywords;
 import com.epam.testautomation.cleartrip.models.BookingDetails;
+import com.epam.testautomation.cleartrip.models.ForceWait;
 import com.epam.testautomation.cleartrip.utils.CommonUtils;
 import com.epam.testautomation.cleartrip.utils.DriverUtil;
 import com.epam.testautomation.cleartrip.utils.PropertyUtil;
@@ -43,6 +44,7 @@ public class PaymentPage {
 		this.driver = driverUtil.getDriver();
 		PageFactory.initElements(this.driver, this);
 		this.wait = new WebDriverWait(this.driver, 30);
+		this.insuranceAmount = 0;
 	}
 	
 	@FindBy (xpath = "//div[@class='openBlock']")
@@ -84,8 +86,11 @@ public class PaymentPage {
 	
 	private By increasedTotalFare = By.cssSelector("span#priceChangeIncreasedFare");
 	
-	public void validateFlightDetails() {
-		insuranceAmount = 0;
+	
+	/**
+	 * Validate flight names and price on the payment page also checks whether insurance to be provided
+	 */
+	public void validateFlightDetails(final boolean checkInsurance) {
 		this.wait.until(ExpectedConditions.visibilityOf(activeFlightDetailsBlock));
 		handleFareChangePopup();
 		List<WebElement> depFlights = activeFlightDetailsBlock.findElements(By.cssSelector("div.itinerary.clearFix.onwBlock"));
@@ -106,31 +111,50 @@ public class PaymentPage {
 				index ++;
 			}
 		}
-		includeInsuranceAmount();
+		if (checkInsurance) {
+			includeInsuranceAmount();
+		} else {
+			unCheckInsurance();
+		}
 		WebElement totalFare = activeFlightDetailsBlock.findElement(totalFareLocator);
 		Assert.assertEquals(Double.parseDouble(totalFare.getText().replaceAll(Index.Constants.ALL_NON_NUMERIC_CHARACTERS, StringUtils.EMPTY).replaceAll(Index.Constants.ALL_SPECIAL_CHARACTER_REGEX_PATTERN, StringUtils.EMPTY)), this.bookingDetails.getDeparturePrice() + this.bookingDetails.getReturnPrice() + insuranceAmount, "Price does not match");
 		activeFlightDetailsBlock.findElement(continueButton).click();
 		LOGGER.log(Level.INFO, "Flight details in payment page verified successfully");
 	}
 	
+	/**
+	 * Checks whether the insurance check box is checked or not
+	 * @return
+	 */
 	public boolean isInsuranceChecked() {
 		return activeFlightDetailsBlock.findElement(insuranceCheckBoxInput).isSelected();
 	}
 	
+	/**
+	 * Check whether insurance box is displayed or not
+	 * @return
+	 */
 	public boolean isInsuranceBoxDisplayed() {
 		List<WebElement> insuranceCheckBox = activeFlightDetailsBlock.findElements(insuranceCheckBoxInput);
 		return insuranceCheckBox.size() > 0 ? true : false;
 	}
 	
+	/**
+	 * Perform un-tick on the insurance check box
+	 */
 	public void unCheckInsurance() {
 		if (isInsuranceBoxDisplayed()) {
 			WebElement insuranceCheckBox = activeFlightDetailsBlock.findElement(insuranceCheckBoxInput);
 			if (isInsuranceChecked()) {
 				insuranceCheckBox.click();
+				ForceWait.pause(5);
 			}
 		}
 	}
 	
+	/**
+	 * Ticks the insurance check box and also include the insurance charges
+	 */
 	public void includeInsuranceAmount() {
 		if (isInsuranceBoxDisplayed()) {
 			if (isInsuranceChecked()) {
@@ -140,9 +164,16 @@ public class PaymentPage {
 					insuranceConfirm.click();
 				}
 			}
+		} else {
+			LOGGER.log(Level.INFO, "Insurance box is not displayed. hence cannot include insurance amouont");
 		}
 	}
 	
+	/**
+	 * Enter traveller details
+	 * @param travellers
+	 * @param mobileNum
+	 */
 	public void enterTravellerDetails(final List<String> travellers, final String mobileNum) {
 		List<WebElement> titleSelect = activeTravellerDetailsBlock.findElements(titleSelector);
 		List<WebElement> firstNameBlockLocator = activeTravellerDetailsBlock.findElements(firstNameBlock);
@@ -165,6 +196,9 @@ public class PaymentPage {
 		mobileNumberBlockLocator.sendKeys(mobileNum);
 	}
 	
+	/**
+	 * Validate default traveller details available at the traveller suggestion box
+	 */
 	public void validateDefaultTravellerDetails() {
 		String suggestedName;
 		String attributeValue = "value";
@@ -188,6 +222,9 @@ public class PaymentPage {
 		LOGGER.log(Level.INFO, "Traveller " + suggestedName + " has booked the flight");
 	}
 	
+	/**
+	 * Handle instant fare change popup and include the charges
+	 */
 	public void handleFareChangePopup() {
 		if (priceChangeUpTemplate.size() > 0) {
 			if (priceChangeUpTemplate.get(0).isDisplayed()) {

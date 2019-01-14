@@ -61,6 +61,9 @@ public class FlightSearchListPage {
 	private By totalAmount = By.xpath("//h2[@class='totalAmount']");
 	private By bookConfirm = By.cssSelector("button.booking.fRight");
 	
+	/**
+	 * Scroll to view and log all the available flights list
+	 */
 	public void scrollAndLogAllFlightSearchList() {
 		ForceWait.pause(15);
 		wait.until(ExpectedConditions.visibilityOfAllElements(flightSearchList));
@@ -68,6 +71,12 @@ public class FlightSearchListPage {
 		flightSearchList.forEach(flight -> {this.jsx.executeScript(Index.JavascriptArgs.SCROLL_INTO_VIEW, flight); LOGGER.info(flight.getText());});
 	}
 	
+	/**
+	 * Method for booking one-way flight from the available flight list as per the parameters provided
+	 * @param flightList
+	 * @param airlineName
+	 * @param range
+	 */
 	private void bookForOneWayFlight(final List<WebElement> flightList, final String airlineName, final int range) {
 		String vendorLocator = "th.vendor.count1";
 		String priceLocator = "BaggageBundlingTemplate";
@@ -89,6 +98,12 @@ public class FlightSearchListPage {
 		LOGGER.info("Booked " + bookedAirlineList + " airline. Price : Rs " + ticketPrice);
 	}
 	
+	/**
+	 * Method for booking round trip flight from the available flight list as per the parameters provided
+	 * @param flightWay
+	 * @param airlineName
+	 * @param range
+	 */
 	private void bookForTwoWayFlight(final FlightWay flightWay, final String airlineName, final int range) {
 		List<String> airlineText = new ArrayList<>();
 		Double airlinePrice;
@@ -122,6 +137,13 @@ public class FlightSearchListPage {
 		LOGGER.log(Level.INFO, "Booked " + airlineText + " airline. Price : " + airlinePrice);
 	}
 	
+	/**
+	 * Book departure flights as per the parameters provided
+	 * applicable for both one-way and two way flights
+	 * @param flightType
+	 * @param airlineName
+	 * @param range
+	 */
 	public void selectDepartureFlightAsPerFlightNameAndRange(final FlightType flightType, final String airlineName, final int range) {
 		switch (flightType) {
 		case ONE_WAY : {
@@ -138,11 +160,22 @@ public class FlightSearchListPage {
 		
 	}
 	
+	/**
+	 * Book return flights from the available flight list as per the parameters provided
+	 * Only applicable for two way round trip
+	 * @param airlineName
+	 * @param range
+	 */
 	public void selectReturnFlightAsPerFlightNameAndRange(final String airlineName, final int range) {
 		bookForTwoWayFlight(FlightWay.ARRIVAL, airlineName, range);
 		LOGGER.info("Two way trip Booking done");
 	}
 	
+	/**
+	 * Method is to validate the flight details after choosing two way flights 
+	 * This method should be called right before confirming booking the two way flights
+	 * Works as booking method on 'Flight list' page
+	 */
 	public void roundTripBookingConfirmation() {
 		this.wait.until(ExpectedConditions.visibilityOf(roundTripConfirmHeader));
 		List<WebElement> flightDetails = roundTripConfirmHeader.findElements(flightMarkers);

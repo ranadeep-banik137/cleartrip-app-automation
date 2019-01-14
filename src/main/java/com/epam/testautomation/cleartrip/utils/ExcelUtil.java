@@ -22,6 +22,11 @@ public class ExcelUtil {
 	Workbook workBook;
 	Sheet sheet;
 	
+	/**
+	 * Instantiate workbook of before 2007 version and also the excel with extension .xls
+	 * @param path
+	 * @return
+	 */
 	private Workbook getXSSFWorkBook(final String path) {
 		try {
 			this.workBook = new XSSFWorkbook(path);
@@ -31,6 +36,11 @@ public class ExcelUtil {
 		return this.workBook;
 	}
 	
+	/**
+	 * Instantiate workbook of 2007 or further versions and also the excel with extension .xlsx
+	 * @param path
+	 * @return
+	 */
 	private Workbook getHSSFWorkBook(final String path) {
 		FileInputStream input;
 		try {
@@ -44,32 +54,67 @@ public class ExcelUtil {
 		return this.workBook;
 	}
 	
+	/**
+	 * Read excel at classpath
+	 * @return
+	 */
 	public ExcelUtil readDefaultExcel() {
 		this.workBook = getXSSFWorkBook(DEFAULT_EXCEL_LOCATION);
 		return this;
 	}
 	
+	/**
+	 * Read Excel at the provided path
+	 * @param path
+	 * @return
+	 */
 	public ExcelUtil readExcel(final String path) {
 		this.workBook = String.valueOf(path.charAt(path.length() - 1)).equals("x") ? getXSSFWorkBook(path) : getHSSFWorkBook(path);
 		return this;
 	}
 	
+	/**
+	 * read Excel and returns in string value
+	 * @param sheetName
+	 * @param columnName
+	 * @param rowNum
+	 * @return
+	 */
 	public String read(final String sheetName, final String columnName, final int rowNum) {
 		this.sheet = this.workBook.getSheet(sheetName);
 		return this.sheet.getRow(rowNum).getCell(getColumnNumberWithText(columnName)).getStringCellValue();
 	}
 	
+	/**
+	 * read Excel and returns in integer value
+	 * @param sheetName
+	 * @param columnName
+	 * @param rowNum
+	 * @return
+	 */
 	public int readInt(final String sheetName, final String columnName, final int rowNum) {
 		this.sheet = this.workBook.getSheet(sheetName);
 		Double d = this.sheet.getRow(rowNum).getCell(getColumnNumberWithText(columnName)).getNumericCellValue();
 		return d.intValue();
 	}
 	
+	/**
+	 * read Excel and returns in double value
+	 * @param sheetName
+	 * @param columnName
+	 * @param rowNum
+	 * @return
+	 */
 	public double readDouble(final String sheetName, final String columnName, final int rowNum) {
 		this.sheet = this.workBook.getSheet(sheetName);
 		return this.sheet.getRow(rowNum).getCell(getColumnNumberWithText(columnName)).getNumericCellValue();
 	}
 	
+	/**
+	 * get Column number having text as '$parameter'
+	 * @param text
+	 * @return
+	 */
 	private int getColumnNumberWithText(final String text) {
 		int resultantColumn = 0;
 		int lastColumnNum = this.sheet.getRow(0).getLastCellNum();
@@ -79,5 +124,21 @@ public class ExcelUtil {
 			}
 		}
 		return resultantColumn;
+	}
+	
+	/**
+	 * Convert the specific column row value into boolean
+	 * @param sheetName
+	 * @param columnName
+	 * @param rowNum
+	 * @return
+	 */
+	public Boolean booleanConvert(final String sheetName, final String columnName, final int rowNum) {
+		String value = this.read(sheetName, columnName, rowNum);
+		Boolean flag = false;
+		if (value.equalsIgnoreCase("yes") || value.equalsIgnoreCase("y") || value.equalsIgnoreCase("true")) {
+			flag = true;
+		}
+		return flag;
 	}
 }

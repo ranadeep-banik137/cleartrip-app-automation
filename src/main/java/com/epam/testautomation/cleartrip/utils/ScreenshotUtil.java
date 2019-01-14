@@ -30,6 +30,9 @@ public class ScreenshotUtil {
 		this.takesScreenshot = driverUtil.getTakesScreenShot();
 	}
 	
+	/**
+	 * Capture screenshot using the current driver instance of the current page title
+	 */
 	public void captureScreenshotOfCurrentPage() {
 		File screenshotFile = this.takesScreenshot.getScreenshotAs(OutputType.FILE);
 		File outputFile = new File(FILE_CAPTURE_LOCATION + SEPARATOR + this.driver.getTitle() + SEPARATOR + RandomStringUtils.randomAlphanumeric(18).toUpperCase() + JPG_EXTENSION);
@@ -40,9 +43,12 @@ public class ScreenshotUtil {
 		}
 	}
 	
+	/**
+	 * Capture screen shot with the filename provided as parameter
+	 */
 	public void captureScreenshotWithFileName(final String fileName) {
 		File screenshotFile = this.takesScreenshot.getScreenshotAs(OutputType.FILE);
-		File outputFile = new File(FILE_CAPTURE_LOCATION + SEPARATOR + this.driver.getTitle() + SEPARATOR + fileName + JPG_EXTENSION);
+		File outputFile = new File(FILE_CAPTURE_LOCATION + SEPARATOR + fileName + JPG_EXTENSION);
 		try {
 			FileUtils.copyFile(screenshotFile, outputFile);
 		} catch (IOException ioException) {

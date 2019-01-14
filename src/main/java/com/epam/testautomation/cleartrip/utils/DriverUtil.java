@@ -38,6 +38,9 @@ public class DriverUtil {
 		setTakesScreenShot();
 	}
 	
+	/**
+	 * Set WebDriver as per the comands passed
+	 */
 	private void setDriver() {
 		
 		switch (this.browser) {

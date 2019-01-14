@@ -17,6 +17,6 @@ public class LoginSteps extends BaseStep {
 		String userName = properties.getProperty(PropertyKeywords.USER_NAME);
 		String password = properties.getProperty(PropertyKeywords.PASSWORD);
 		dashboard.enterLoginCredentialsAfterClickingOnSiginButton(userName, password);
-		screenshotUtil.captureScreenshotOfCurrentPage();
+		screenshotUtil.captureScreenshotWithFileName(this.getClass().getSimpleName());
 	}
 }

@@ -42,5 +42,7 @@ public interface ExcelKeywords {
 		String TRAVELLER_FORMATTER = "Traveller%s";
 		
 		String MOBILE_NUMBER = "Mobile Number";
+		
+		String INCLUDE_INSURANCE = "Include Insurance";
 	}
 }

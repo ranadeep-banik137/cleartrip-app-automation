@@ -1,6 +1,8 @@
 package com.epam.testautomation.cleartrip.utils;
 
+import java.util.EmptyStackException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -96,6 +98,27 @@ public class LocatorUtils {
 	
 	public WebElement getWebelementByTagName(final String name) {
 		return this.driver.findElement(getByTagName(name));
+	}
+	
+	public WebElement getFirstActiveElement(final By element) {
+		List<WebElement> elements = this.driver.findElements(element);
+		if (elements.size() == 0)
+			throw new EmptyStackException();
+		return elements.stream().filter(e -> e.isDisplayed()).collect(Collectors.toList()).get(0);
+	}
+	
+	public WebElement getActiveElement(final By element, final int index) {
+		List<WebElement> elements = this.driver.findElements(element);
+		if (elements.size() == 0)
+			throw new EmptyStackException();
+		return elements.stream().filter(e -> e.isDisplayed()).collect(Collectors.toList()).get(index);
+	}
+	
+	public List<WebElement> getListOfActiveElements(final By element) {
+		List<WebElement> elements = this.driver.findElements(element);
+		if (elements.size() == 0)
+			throw new EmptyStackException();
+		return elements.stream().filter(e -> e.isDisplayed()).collect(Collectors.toList());
 	}
 	
 }

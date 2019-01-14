@@ -35,6 +35,11 @@ public class PropertyUtil {
 		this.properties = properties;
 	}
 	
+	/**
+	 * Fetch property file at location
+	 * @param location
+	 * @return
+	 */
 	public PropertyUtil fetchPropertyFile(final String location) {
 		this.path = location;
 		this.file = new File(this.path);
@@ -49,6 +54,12 @@ public class PropertyUtil {
 		return this;
 	}
 	
+	/**
+	 * Update property file with key and value
+	 * @param key
+	 * @param value
+	 * @return
+	 */
 	public PropertyUtil updatePropertyFile(final String key, final String value) {
 		try {
 			this.outputStream = new FileOutputStream(this.file);
@@ -62,10 +73,19 @@ public class PropertyUtil {
 		return this;
 	}
 	
+	/**
+	 * Fetch property value provided with the key
+	 * @param key
+	 * @return
+	 */
 	public Object fetchValueWithKey(final String key) {
 		return this.properties.get(key);
 	}
 	
+	/**
+	 * fetch all the property file data in key value maps
+	 * @return
+	 */
 	public Map<String, Object> fetchAll() {
 		Map<String, Object> objectMapper = new HashMap<String, Object>();
 		for (Object key : this.properties.keySet()) {
@@ -74,11 +94,20 @@ public class PropertyUtil {
 		return objectMapper;
 	}
 	
+	/**
+	 * Fetch default property file in classpath
+	 * @return
+	 */
 	public Properties fetchDefaultPropertiesFile() {
 		fetchPropertyFile(DEFAULT_PROPERTY_LOCATION);
 		return this.properties;
 	}
 	
+	/**
+	 * fetch value from default property file In classpath
+	 * @param key
+	 * @return
+	 */
 	public Object fetchValueFromDefaultPropertiesFile(final String key) {
 		fetchPropertyFile(DEFAULT_PROPERTY_LOCATION);
 		return fetchValueWithKey(key);

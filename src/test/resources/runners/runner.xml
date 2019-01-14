@@ -9,7 +9,7 @@
 	</run>
 	</groups> -->
 		<classes>
-		<class name="com.epam.testautomation.cleartrip.runners.LoginTestNgRunner"/>
+		<class name="com.epam.testautomation.cleartrip.runners.BookingTestNgRunner"/>
 		</classes>
 	</test>
 </suite>

@@ -48,7 +48,7 @@ public class ChooseFlightSteps extends BaseStep {
 	@And("^I start searching flights$")
 	public void clickOnSearchFlights() {
 		dashboard.clickSearchFlights();
+		screenshotUtil.captureScreenshotWithFileName(this.getClass().getSimpleName());
 	}
 	
-
 }

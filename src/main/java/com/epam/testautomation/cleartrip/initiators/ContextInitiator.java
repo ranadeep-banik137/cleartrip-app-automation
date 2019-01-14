@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.epam.testautomation.cleartrip.contextconfig.LoginContextConfig;
+import com.epam.testautomation.cleartrip.contextconfig.ContextConfigInitializer;
 
 public class ContextInitiator {
 	
@@ -15,7 +15,7 @@ public class ContextInitiator {
 	private TestFactory factory;
 	
 	private ContextInitiator() {
-		context = new AnnotationConfigApplicationContext(LoginContextConfig.class);
+		context = new AnnotationConfigApplicationContext(ContextConfigInitializer.class);
 		LOGGER.info("Context created with the config class as : \"com.epam.testautomation.cleartrip.contextconfig.LoginContextConfig.class\"");
 	}
 

@@ -34,6 +34,10 @@ public class CalendarUtil {
 		setDayMapper();
 	}
 	
+	/**
+	 * Method that selects the date from the calender in cleartrip dashboard
+	 * @param departureDate
+	 */
 	@SuppressWarnings("deprecation")
 	public void selectDate(final String departureDate) {
 		try {
@@ -74,6 +78,9 @@ public class CalendarUtil {
 		}
 	}
 	
+	/**
+	 * Month mapper
+	 */
 	private void setMonthMapper() {
 		monthMapper = new HashMap<>();
 		monthMapper.put(0, "January");
@@ -90,6 +97,9 @@ public class CalendarUtil {
 		monthMapper.put(11, "December");
 	}
 	
+	/**
+	 * Day mapper
+	 */
 	private void setDayMapper() {
 		dayMapper = new HashMap<>();
 		dayMapper.put(0, "Sunday");
