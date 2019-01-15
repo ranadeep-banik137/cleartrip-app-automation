@@ -7,7 +7,7 @@
 
 # Project Details : 
 	
-	A complete project designed with maven build tool with all the required specifications/dependencies has been built at the runtime (For dependencies refer : pom.xml).
+	A complete project designed with maven build tool with all the required specifications/dependencies has been built at the runtime (For dependencies refer : [pom.xml](https://github.com/ranadeep-banik137/cleartrip-app-automation/blob/master/pom.xml) ).
 	
 
 ## Tools/Libraries used : 
@@ -17,7 +17,10 @@
 + Spring : Framework utilisation has been designed to be as a singleton pattern for which Spring Autowiring approach has been followed.
 + Java features : All JAVA 8 features (Lambda expression, functional interface, default interface method,  Java stream API implementation, method references, etc ) has been practised in this framework. 
 + Apache POI : Runtime testData/datas has been populated with dedicated headers in default excel sheet. Also the platform has been designed in such a way to utilize (excel/property/config) datas from any location.
-
++ Selenium : Selenium version 2.53.0 has been used for automation
++ Screenshot Tool : All page behavior has been captured with TakesScreenShot Selenium java library. 
+	
+	Location of Screenshots : src/test/resources/shots/..
 
 # Test Details :
 
@@ -44,7 +47,7 @@
 + Application url can be passed through environment variables as URL, though by default, in the default data.properties file the default url has been mentioned.
 	
 	Example : Assign KEY as 'URL' 
-				 Value as 'https://www.cleatrip.com'
+				 Value as 'https://www.cleartrip.com'
 	
 ## Broswers applicable : 
 
@@ -55,3 +58,13 @@
 | INTERNET EXPLORER | ie |
 
 	NB : All the browser drivers has been placed itself inside the project in 'src/main/resources/tools/..' location. All left out browser implementation is in progress. Or the implementation can be done in BroswerUtils.java file itself.	
+
+# Important Links : 
+
++ [System-drivers](https://github.com/ranadeep-banik137/cleartrip-app-automation/tree/master/src/main/resources/tools)
++ [Feature-files](https://github.com/ranadeep-banik137/cleartrip-app-automation/tree/master/src/test/java/com/epam/testautomation/cleartrip/features)
++ [Test-data-location](https://github.com/ranadeep-banik137/cleartrip-app-automation/blob/master/src/test/resources/dataprovider)
++ [Default-properties-file](https://github.com/ranadeep-banik137/cleartrip-app-automation/blob/master/src/test/resources/dataprovider/data.properties)
++ [Default-excel-data-sheet](https://github.com/ranadeep-banik137/cleartrip-app-automation/blob/master/src/test/resources/dataprovider/TestData.xlsx)
++ [Runner-files-path](https://github.com/ranadeep-banik137/cleartrip-app-automation/blob/master/src/test/resources/runners)
++ [Runtime-screenshots](https://github.com/ranadeep-banik137/cleartrip-app-automation/blob/master/src/test/resources/shots)
