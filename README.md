@@ -20,7 +20,7 @@
 + Selenium Webdriver : Selenium version 2.53.0 has been used for automation
 + Screenshot Tool : All page behavior has been captured with TakesScreenShot Selenium java library. 
 	
-	Location of Screenshots : src/test/resources/shots/..
+		Location of Screenshots : src/test/resources/shots/..
 
 # Test Details :
 
@@ -28,25 +28,25 @@
 
 + One-Way Flight Booking : 
 	
-	One time flight booking from departure airport location to destination airport, comprising the validations done on the fight names, flight price, flight dynamic fare increment, flight insurance charges.
+		One time flight booking from departure airport location to destination airport, comprising the validations done on the fight names, flight price, flight dynamic fare increment, flight insurance charges.
 	
 + Two-Way (Includes Return) Flight Booking : 
 
-	Two bookings comprising the departure from one date along with the return flight together. All the validations same as one-way flight i.e mentioned above has been included	
+		Two bookings comprising the departure from one date along with the return flight together. All the validations same as one-way flight i.e mentioned above has been included	
 
 # Test Run Properties : 
 
 + We have to pass the testNG execution runner file through maven command. By default there is a [runner.xml](https://github.com/ranadeep-banik137/cleartrip-app-automation/blob/master/src/test/resources/runners/runner.xml) file included in [src/test/resources/runners](https://github.com/ranadeep-banik137/cleartrip-app-automation/blob/master/src/test/resources/runners) location.
 	
-	Example : mvn clean test -Dexecution-xml=runner
+		Example : mvn clean test -Dexecution-xml=runner
 	
 + We have to pass the browser name through maven command. By default in [ConfigContext](https://github.com/ranadeep-banik137/cleartrip-app-automation/tree/master/src/main/java/com/epam/testautomation/cleartrip/ContextConfigInitializer.java) file if no browser name is specified, it would assume 'CHROME' as default browser.
 	
-	Example : mvn clean test -Dbrowser=firefox
+		Example : mvn clean test -Dbrowser=firefox
 	
 + Application url can be passed through environment variables as URL, though by default, in the default data.properties file the default url has been mentioned.
 	
-	Example : Assign KEY as 'URL' 
+		Example : Assign KEY as 'URL' 
 				 Value as 'https://www.cleartrip.com'
 	
 ## Broswers applicable : 
