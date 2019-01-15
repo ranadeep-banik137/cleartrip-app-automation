@@ -7,7 +7,7 @@
 
 # Project Details : 
 	
-	A complete project designed with maven build tool with all the required specifications/dependencies has been built at the runtime (For dependencies refer : [pom.xml](https://github.com/ranadeep-banik137/cleartrip-app-automation/blob/master/pom.xml) ).
+	A complete project designed with maven build tool with all the required specifications/dependencies has been built at the runtime (For dependencies refer : pom.xml).
 	
 
 ## Tools/Libraries used : 
