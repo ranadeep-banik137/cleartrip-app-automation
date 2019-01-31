@@ -1,9 +1,11 @@
 @All
 Feature: Book Flights from cleartrip.com website
+  
+  Background:
+  Given I will browse to cleartrip website
 
   @Oneway
   Scenario: Book one way flight
-    Given I will browse to cleartrip website
     And Login with valid credentials
     And Select country as "India"
     When I Click on one way radio button
@@ -19,7 +21,6 @@ Feature: Book Flights from cleartrip.com website
 
   @Twoway
   Scenario: Book two way flight
-    Given I will browse to cleartrip website
     And Login with valid credentials
     And Select country as "India"
     When I Click on two way radio button

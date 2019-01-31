@@ -70,6 +70,8 @@ public interface Index {
 		String TOOLS = "tools\\";
 		
 		String SHOTS = "shots\\";
+		
+		String REPORTS = "reports\\";
 	}
 	
 	interface FlatFile {
@@ -79,6 +81,12 @@ public interface Index {
 		String DEFAULT_EXCEL_FILE = "TestData.xlsx";
 		
 		String DEFAULT_RUNNER_XML_FILE = "runner.xml";
+		
+		String EXTENT_REPORT_FILENAME = "epam_cleartrip-run_html_report.html";
+		
+		String INFO_FILE = "info.properties";
+		
+		String EXTENT_CONFIG = "extent-config.xml";
 	}
 	
 	interface Constants {
