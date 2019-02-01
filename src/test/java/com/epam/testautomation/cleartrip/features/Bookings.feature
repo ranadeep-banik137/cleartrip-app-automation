@@ -18,6 +18,7 @@ Feature: Book Flights from cleartrip.com website
     And I choose the appropriate airline within my budget 5000
     And I validated all the flight details on payment page
     And I enter and validate traveller details
+    And I finally close the browser here
 
   @Twoway
   Scenario: Book two way flight

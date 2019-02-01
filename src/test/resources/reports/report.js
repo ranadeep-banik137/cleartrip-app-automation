@@ -12,6 +12,10 @@ formatter.feature({
     }
   ]
 });
+formatter.before({
+  "duration": 4944517658,
+  "status": "passed"
+});
 formatter.background({
   "line": 4,
   "name": "",
@@ -25,10 +29,10 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "LoginSteps.navigateToCleartripWebSite()"
+  "location": "CleartripAutomationSteps.navigateToCleartripWebSite()"
 });
 formatter.result({
-  "duration": 59681557896,
+  "duration": 18917909855,
   "status": "passed"
 });
 formatter.scenario({
@@ -105,11 +109,16 @@ formatter.step({
   "name": "I enter and validate traveller details",
   "keyword": "And "
 });
+formatter.step({
+  "line": 21,
+  "name": "I finally close the browser here",
+  "keyword": "And "
+});
 formatter.match({
-  "location": "LoginSteps.loginWithValidCredentials()"
+  "location": "CleartripAutomationSteps.loginWithValidCredentials()"
 });
 formatter.result({
-  "duration": 29541896729,
+  "duration": 17938109689,
   "status": "passed"
 });
 formatter.match({
@@ -119,59 +128,59 @@ formatter.match({
       "offset": 19
     }
   ],
-  "location": "CountrySelectionSteps.selectCountry(String)"
+  "location": "CleartripAutomationSteps.selectCountry(String)"
 });
 formatter.result({
-  "duration": 8740997657,
+  "duration": 8382093017,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.clickOnOneWayRadioButton()"
+  "location": "CleartripAutomationSteps.clickOnOneWayRadioButton()"
 });
 formatter.result({
-  "duration": 141777007,
+  "duration": 27442931,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.enterAndSelectDepartureAirportName()"
+  "location": "CleartripAutomationSteps.enterAndSelectDepartureAirportName()"
 });
 formatter.result({
-  "duration": 4252779412,
+  "duration": 2640318942,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.enterAndSelectArrivalAirportName()"
+  "location": "CleartripAutomationSteps.enterAndSelectArrivalAirportName()"
 });
 formatter.result({
-  "duration": 2870474295,
+  "duration": 1700755457,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.selectDepartureDate()"
+  "location": "CleartripAutomationSteps.selectDepartureDate()"
 });
 formatter.result({
-  "duration": 669461901,
+  "duration": 496839394,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.selectTheIndividualCounts()"
+  "location": "CleartripAutomationSteps.selectTheIndividualCounts()"
 });
 formatter.result({
-  "duration": 956057618,
+  "duration": 486245254,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.clickOnSearchFlights()"
+  "location": "CleartripAutomationSteps.clickOnSearchFlights()"
 });
 formatter.result({
-  "duration": 1405129640,
+  "duration": 759321463,
   "status": "passed"
 });
 formatter.match({
-  "location": "FlightListManagementSteps.viewListOfAvailableFlights()"
+  "location": "CleartripAutomationSteps.viewListOfAvailableFlights()"
 });
 formatter.result({
-  "duration": 21054922216,
+  "duration": 16990729666,
   "status": "passed"
 });
 formatter.match({
@@ -181,24 +190,39 @@ formatter.match({
       "offset": 50
     }
   ],
-  "location": "FlightListManagementSteps.chooseFlightWithinBudget(int)"
+  "location": "CleartripAutomationSteps.chooseFlightWithinBudget(int)"
 });
 formatter.result({
-  "duration": 14842039534,
+  "duration": 12007572200,
   "status": "passed"
 });
 formatter.match({
-  "location": "PaymentSteps.validateAllTheFlightDetails()"
+  "location": "CleartripAutomationSteps.validateAllTheFlightDetails()"
 });
 formatter.result({
-  "duration": 31027684255,
+  "duration": 26170102710,
   "status": "passed"
 });
 formatter.match({
-  "location": "PaymentSteps.enterAndValidateTravellerDetails()"
+  "location": "CleartripAutomationSteps.enterAndValidateTravellerDetails()"
 });
 formatter.result({
-  "duration": 7150007403,
+  "duration": 6626989299,
+  "status": "passed"
+});
+formatter.match({
+  "location": "CleartripAutomationSteps.closeTheBrowser()"
+});
+formatter.result({
+  "duration": 2681272424,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 198226602,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3626547557,
   "status": "passed"
 });
 formatter.background({
@@ -214,14 +238,14 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "LoginSteps.navigateToCleartripWebSite()"
+  "location": "CleartripAutomationSteps.navigateToCleartripWebSite()"
 });
 formatter.result({
-  "duration": 10899062229,
+  "duration": 6208352261,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 23,
+  "line": 24,
   "name": "Book two way flight",
   "description": "",
   "id": "book-flights-from-cleartrip.com-website;book-two-way-flight",
@@ -229,96 +253,96 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 22,
+      "line": 23,
       "name": "@Twoway"
     }
   ]
 });
 formatter.step({
-  "line": 24,
+  "line": 25,
   "name": "Login with valid credentials",
   "keyword": "And "
 });
 formatter.step({
-  "line": 25,
+  "line": 26,
   "name": "Select country as \"India\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 26,
+  "line": 27,
   "name": "I Click on two way radio button",
   "keyword": "When "
 });
 formatter.step({
-  "line": 27,
+  "line": 28,
   "name": "Enter departure airport name and select the appropriate option",
   "keyword": "And "
 });
 formatter.step({
-  "line": 28,
+  "line": 29,
   "name": "Enter arrival airport name and select the appropriate option",
   "keyword": "And "
 });
 formatter.step({
-  "line": 29,
+  "line": 30,
   "name": "Select the departure date",
   "keyword": "And "
 });
 formatter.step({
-  "line": 30,
+  "line": 31,
   "name": "Select the return date",
   "keyword": "And "
 });
 formatter.step({
-  "line": 31,
+  "line": 32,
   "name": "Select the person counts",
   "keyword": "And "
 });
 formatter.step({
-  "line": 32,
+  "line": 33,
   "name": "I start searching flights",
   "keyword": "And "
 });
 formatter.step({
-  "line": 33,
+  "line": 34,
   "name": "I get list of available flights",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 34,
+  "line": 35,
   "name": "I choose the departure airline within my budget 5000",
   "keyword": "And "
 });
 formatter.step({
-  "line": 35,
+  "line": 36,
   "name": "I choose the return airline within my budget 4500",
   "keyword": "And "
 });
 formatter.step({
-  "line": 36,
+  "line": 37,
   "name": "I validate the booking and click book button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 37,
+  "line": 38,
   "name": "I validated all the flight details on payment page",
   "keyword": "And "
 });
 formatter.step({
-  "line": 38,
+  "line": 39,
   "name": "I enter and validate traveller details",
   "keyword": "And "
 });
 formatter.step({
-  "line": 39,
+  "line": 40,
   "name": "I finally close the browser here",
   "keyword": "And "
 });
 formatter.match({
-  "location": "LoginSteps.loginWithValidCredentials()"
+  "location": "CleartripAutomationSteps.loginWithValidCredentials()"
 });
 formatter.result({
-  "duration": 474270091,
+  "duration": 18648564706,
   "status": "passed"
 });
 formatter.match({
@@ -328,67 +352,67 @@ formatter.match({
       "offset": 19
     }
   ],
-  "location": "CountrySelectionSteps.selectCountry(String)"
+  "location": "CleartripAutomationSteps.selectCountry(String)"
 });
 formatter.result({
-  "duration": 9058090215,
+  "duration": 8179322413,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.clickOnTwoWayRadioButton()"
+  "location": "CleartripAutomationSteps.clickOnTwoWayRadioButton()"
 });
 formatter.result({
-  "duration": 226493344,
+  "duration": 89413455,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.enterAndSelectDepartureAirportName()"
+  "location": "CleartripAutomationSteps.enterAndSelectDepartureAirportName()"
 });
 formatter.result({
-  "duration": 2709597564,
+  "duration": 2618578272,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.enterAndSelectArrivalAirportName()"
+  "location": "CleartripAutomationSteps.enterAndSelectArrivalAirportName()"
 });
 formatter.result({
-  "duration": 3766839566,
+  "duration": 2674845398,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.selectDepartureDate()"
+  "location": "CleartripAutomationSteps.selectDepartureDate()"
 });
 formatter.result({
-  "duration": 802068564,
+  "duration": 493303463,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.selectReturnDate()"
+  "location": "CleartripAutomationSteps.selectReturnDate()"
 });
 formatter.result({
-  "duration": 690629679,
+  "duration": 498585599,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.selectTheIndividualCounts()"
+  "location": "CleartripAutomationSteps.selectTheIndividualCounts()"
 });
 formatter.result({
-  "duration": 953562900,
+  "duration": 432958255,
   "status": "passed"
 });
 formatter.match({
-  "location": "ChooseFlightSteps.clickOnSearchFlights()"
+  "location": "CleartripAutomationSteps.clickOnSearchFlights()"
 });
 formatter.result({
-  "duration": 1265809807,
+  "duration": 851190244,
   "status": "passed"
 });
 formatter.match({
-  "location": "FlightListManagementSteps.viewListOfAvailableFlights()"
+  "location": "CleartripAutomationSteps.viewListOfAvailableFlights()"
 });
 formatter.result({
-  "duration": 19088560602,
-  "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: chrome\u003d71.0.3578.98)\n  (Driver info: chromedriver\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform\u003dWindows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 933 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html\nBuild info: version: \u00272.53.0\u0027, revision: \u002735ae25b1534ae328c771e0856c93e187490ca824\u0027, time: \u00272016-03-15 10:43:46\u0027\nSystem info: host: \u0027LAPTOP-Q981VJ79\u0027, ip: \u0027192.168.1.3\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_181\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, goog:chromeOptions\u003d{debuggerAddress\u003dlocalhost:58926}, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir\u003dC:\\Users\\DEEPJO~1\\AppData\\Local\\Temp\\scoped_dir22664_847}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d71.0.3578.98, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: dfb689e33c5cc8caec302414e134b60b\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:368)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:261)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:257)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)\r\n\tat com.epam.testautomation.cleartrip.pageobjectmodel.FlightSearchListPage.scrollAndLogAllFlightSearchList(FlightSearchListPage.java:69)\r\n\tat com.epam.testautomation.cleartrip.steps.FlightListManagementSteps.viewListOfAvailableFlights(FlightListManagementSteps.java:11)\r\n\tat ✽.Then I get list of available flights(Bookings.feature:33)\r\n",
+  "duration": 19342138790,
+  "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: chrome\u003d71.0.3578.98)\n  (Driver info: chromedriver\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform\u003dWindows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 72 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html\nBuild info: version: \u00272.53.0\u0027, revision: \u002735ae25b1534ae328c771e0856c93e187490ca824\u0027, time: \u00272016-03-15 10:43:46\u0027\nSystem info: host: \u0027EPINPUNW0043\u0027, ip: \u002710.22.94.69\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_181\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, goog:chromeOptions\u003d{debuggerAddress\u003dlocalhost:53604}, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir\u003dC:\\Users\\RANADE~1\\AppData\\Local\\Temp\\scoped_dir3008_6271}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d71.0.3578.98, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: bdc67cea15cf166b090aa489730a5653\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:368)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:261)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:257)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)\r\n\tat com.epam.testautomation.cleartrip.pageobjectmodel.FlightSearchListPage.scrollAndLogAllFlightSearchList(FlightSearchListPage.java:69)\r\n\tat com.epam.testautomation.cleartrip.steps.CleartripAutomationSteps.viewListOfAvailableFlights(CleartripAutomationSteps.java:119)\r\n\tat ✽.Then I get list of available flights(Bookings.feature:34)\r\n",
   "status": "failed"
 });
 formatter.match({
@@ -398,7 +422,7 @@ formatter.match({
       "offset": 48
     }
   ],
-  "location": "FlightListManagementSteps.chooseDepartureFlightWithinBudget(int)"
+  "location": "CleartripAutomationSteps.chooseDepartureFlightWithinBudget(int)"
 });
 formatter.result({
   "status": "skipped"
@@ -410,33 +434,36 @@ formatter.match({
       "offset": 45
     }
   ],
-  "location": "FlightListManagementSteps.chooseReturnFlightWithinBudget(int)"
+  "location": "CleartripAutomationSteps.chooseReturnFlightWithinBudget(int)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "FlightListManagementSteps.validateTheBooking()"
+  "location": "CleartripAutomationSteps.validateTheBooking()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "PaymentSteps.validateAllTheFlightDetails()"
+  "location": "CleartripAutomationSteps.validateAllTheFlightDetails()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "PaymentSteps.enterAndValidateTravellerDetails()"
+  "location": "CleartripAutomationSteps.enterAndValidateTravellerDetails()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "PaymentSteps.closeTheBrowser()"
+  "location": "CleartripAutomationSteps.closeTheBrowser()"
 });
 formatter.result({
   "status": "skipped"
 });
+formatter.after({
+  "duration": 1371971910,
+  "status": "passed"
 });

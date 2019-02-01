@@ -1,7 +1,9 @@
 package com.epam.testautomation.cleartrip.runners;
 
+import java.io.File;
 import java.util.Properties;
 
+import com.epam.testautomation.cleartrip.constant.Index;
 import com.epam.testautomation.cleartrip.utils.ExcelUtil;
 import com.epam.testautomation.cleartrip.utils.PropertyUtil;
 
@@ -21,6 +23,11 @@ public class MainTest {
 		
 		ExcelUtil excel = new ExcelUtil();
 		System.out.println(excel.readDefaultExcel().read("XwoWay", "Return Date", 2));
+		
+		File file = new File(System.getProperty(Index.System.USER_DIR) + Index.Path.TEST_RESOURCES_PATH + Index.Folder.SHOTS);
+		for (String e : file.list()) {
+			System.out.println(e);
+		}
 	}
 
 }

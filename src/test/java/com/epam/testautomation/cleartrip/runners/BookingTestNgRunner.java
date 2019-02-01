@@ -7,25 +7,24 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.epam.testautomation.cleartrip.reporting.ExtentReportUtil;
+import com.epam.testautomation.cleartrip.listeners.BasicTestFilterListener;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(features = "src/test/java/com/epam/testautomation/cleartrip/features", glue ={"com.epam.testautomation.cleartrip.steps"},  monochrome = true, plugin = {"pretty", "html:src/test/resources/reports"}, tags = {"@All"})
+@Listeners(BasicTestFilterListener.class)
 public class BookingTestNgRunner {
 	
 	private Logger LOGGER = Logger.getLogger(BookingTestNgRunner.class.getName());
-	private ExtentReportUtil report;
 	TestNGCucumberRunner runner = new TestNGCucumberRunner(this.getClass());
 	
 	@BeforeMethod
 	public void setup() {
-		report = new ExtentReportUtil();
-		report.genarateReportFile();
 		LOGGER.log(Level.INFO, "Initiating TestNG runner for automation of cleartrip application.");
 	}
 	
@@ -42,7 +41,6 @@ public class BookingTestNgRunner {
 	
 	@AfterMethod
 	public void finish(ITestResult result) {
-		report.result(result);
 		LOGGER.info("Feature runner accomplished");
 		this.runner.finish();
 	}

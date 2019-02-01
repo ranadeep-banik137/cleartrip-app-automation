@@ -24,4 +24,13 @@ public class CommonUtils {
 		return stringList.stream().collect(Collectors.joining(separator));
 	}
 	
+	
+	public static boolean isNullOrEmpty(final String inputString) {
+		boolean flag = false;
+		if (inputString == null || inputString.isEmpty()) {
+			flag = true;
+		}
+		return flag;
+	}
+	
 }
