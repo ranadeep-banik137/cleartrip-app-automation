@@ -1,6 +1,5 @@
 package com.epam.testautomation.cleartrip.steps;
 
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,6 +16,7 @@ import com.epam.testautomation.cleartrip.pageobjectmodel.FlightSearchListPage;
 import com.epam.testautomation.cleartrip.pageobjectmodel.PaymentPage;
 import com.epam.testautomation.cleartrip.utils.CommonUtils;
 import com.epam.testautomation.cleartrip.utils.ExcelUtil;
+import com.epam.testautomation.cleartrip.utils.PropertyUtil;
 import com.epam.testautomation.cleartrip.utils.ScreenshotUtil;
 
 import cucumber.api.Scenario;
@@ -35,7 +35,7 @@ public class CleartripAutomationSteps {
 	FlightSearchListPage flightList;
 	PaymentPage paymentPage;
 	WebDriver driver;
-	Properties properties;
+	PropertyUtil propertyUtil;
 	ScreenshotUtil screenshotUtil;
 	ExcelUtil excelUtil;
 	
@@ -47,20 +47,20 @@ public class CleartripAutomationSteps {
 		flightList = factory.getFlightSearchListPage();
 		paymentPage = factory.getPaymentPage();
 		driver = factory.getDriver();
-		properties = factory.getPropertyUtil().fetchDefaultPropertiesFile();
+		propertyUtil = factory.getPropertyUtil();
 		screenshotUtil = factory.getScreenshotUtil();
 		excelUtil = factory.getExcelUtil().readDefaultExcel();
 	}
 	
 	@Given("^I will browse to cleartrip website$")
 	public void navigateToCleartripWebSite() {
-		factory.launchUrl(properties.getProperty(PropertyKeywords.URL));
+		factory.launchUrl(String.valueOf(propertyUtil.fetchValueFromDefaultPropertiesFile(PropertyKeywords.URL)));
 	}
 	
 	@And("^Login with valid credentials$")
 	public void loginWithValidCredentials() {
-		String userName = properties.getProperty(PropertyKeywords.USER_NAME);
-		String password = properties.getProperty(PropertyKeywords.PASSWORD);
+		String userName = propertyUtil.fetchDecodedValue(PropertyKeywords.USER_NAME);
+		String password = propertyUtil.fetchDecodedValue(PropertyKeywords.PASSWORD);
 		dashboard.enterLoginCredentialsAfterClickingOnSiginButton(userName, password);
 		screenshotUtil.captureScreenshotWithFileName(this.getClass().getSimpleName());
 	}

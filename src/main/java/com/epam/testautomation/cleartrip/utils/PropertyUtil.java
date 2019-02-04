@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -111,6 +112,11 @@ public class PropertyUtil {
 	public Object fetchValueFromDefaultPropertiesFile(final String key) {
 		fetchPropertyFile(DEFAULT_PROPERTY_LOCATION);
 		return fetchValueWithKey(key);
+	}
+	
+	
+	public String fetchDecodedValue(final String key) {
+		return new String(Base64.getDecoder().decode(this.properties.getProperty(key)));
 	}
 
 }

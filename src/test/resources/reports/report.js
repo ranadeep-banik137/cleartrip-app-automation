@@ -13,7 +13,7 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 4944517658,
+  "duration": 52429486750,
   "status": "passed"
 });
 formatter.background({
@@ -32,7 +32,7 @@ formatter.match({
   "location": "CleartripAutomationSteps.navigateToCleartripWebSite()"
 });
 formatter.result({
-  "duration": 18917909855,
+  "duration": 80631346930,
   "status": "passed"
 });
 formatter.scenario({
@@ -118,7 +118,7 @@ formatter.match({
   "location": "CleartripAutomationSteps.loginWithValidCredentials()"
 });
 formatter.result({
-  "duration": 17938109689,
+  "duration": 33402180095,
   "status": "passed"
 });
 formatter.match({
@@ -131,56 +131,56 @@ formatter.match({
   "location": "CleartripAutomationSteps.selectCountry(String)"
 });
 formatter.result({
-  "duration": 8382093017,
+  "duration": 9316703012,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.clickOnOneWayRadioButton()"
 });
 formatter.result({
-  "duration": 27442931,
+  "duration": 32630173,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.enterAndSelectDepartureAirportName()"
 });
 formatter.result({
-  "duration": 2640318942,
+  "duration": 4522801270,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.enterAndSelectArrivalAirportName()"
 });
 formatter.result({
-  "duration": 1700755457,
+  "duration": 1901955455,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.selectDepartureDate()"
 });
 formatter.result({
-  "duration": 496839394,
+  "duration": 727968970,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.selectTheIndividualCounts()"
 });
 formatter.result({
-  "duration": 486245254,
+  "duration": 1262034234,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.clickOnSearchFlights()"
 });
 formatter.result({
-  "duration": 759321463,
+  "duration": 1730974408,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.viewListOfAvailableFlights()"
 });
 formatter.result({
-  "duration": 16990729666,
+  "duration": 31055009257,
   "status": "passed"
 });
 formatter.match({
@@ -193,36 +193,34 @@ formatter.match({
   "location": "CleartripAutomationSteps.chooseFlightWithinBudget(int)"
 });
 formatter.result({
-  "duration": 12007572200,
-  "status": "passed"
+  "duration": 27613781071,
+  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"class name\",\"selector\":\"booking\"}\n  (Session info: chrome\u003d71.0.3578.98)\n  (Driver info: chromedriver\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform\u003dWindows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 20.01 seconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00272.53.0\u0027, revision: \u002735ae25b1534ae328c771e0856c93e187490ca824\u0027, time: \u00272016-03-15 10:43:46\u0027\nSystem info: host: \u0027LAPTOP-Q981VJ79\u0027, ip: \u0027192.168.1.5\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_181\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, goog:chromeOptions\u003d{debuggerAddress\u003dlocalhost:52448}, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir\u003dC:\\Users\\DEEPJO~1\\AppData\\Local\\Temp\\scoped_dir14532_12989}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d71.0.3578.98, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 049cfbd7044307d9426e1d3cca3db88e\n*** Element info: {Using\u003dclass name, value\u003dbooking}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:198)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.findElementByClassName(RemoteWebElement.java:272)\r\n\tat org.openqa.selenium.By$ByClassName.findElement(By.java:391)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:194)\r\n\tat com.epam.testautomation.cleartrip.pageobjectmodel.FlightSearchListPage.bookForOneWayFlight(FlightSearchListPage.java:94)\r\n\tat com.epam.testautomation.cleartrip.pageobjectmodel.FlightSearchListPage.selectDepartureFlightAsPerFlightNameAndRange(FlightSearchListPage.java:150)\r\n\tat com.epam.testautomation.cleartrip.steps.CleartripAutomationSteps.chooseFlightWithinBudget(CleartripAutomationSteps.java:124)\r\n\tat ✽.And I choose the appropriate airline within my budget 5000(Bookings.feature:18)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.validateAllTheFlightDetails()"
 });
 formatter.result({
-  "duration": 26170102710,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.enterAndValidateTravellerDetails()"
 });
 formatter.result({
-  "duration": 6626989299,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.closeTheBrowser()"
 });
 formatter.result({
-  "duration": 2681272424,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 198226602,
+  "duration": 5454819646,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3626547557,
+  "duration": 9626461172,
   "status": "passed"
 });
 formatter.background({
@@ -241,7 +239,7 @@ formatter.match({
   "location": "CleartripAutomationSteps.navigateToCleartripWebSite()"
 });
 formatter.result({
-  "duration": 6208352261,
+  "duration": 12827425354,
   "status": "passed"
 });
 formatter.scenario({
@@ -342,7 +340,7 @@ formatter.match({
   "location": "CleartripAutomationSteps.loginWithValidCredentials()"
 });
 formatter.result({
-  "duration": 18648564706,
+  "duration": 22963456869,
   "status": "passed"
 });
 formatter.match({
@@ -355,64 +353,64 @@ formatter.match({
   "location": "CleartripAutomationSteps.selectCountry(String)"
 });
 formatter.result({
-  "duration": 8179322413,
+  "duration": 10086998576,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.clickOnTwoWayRadioButton()"
 });
 formatter.result({
-  "duration": 89413455,
+  "duration": 168179555,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.enterAndSelectDepartureAirportName()"
 });
 formatter.result({
-  "duration": 2618578272,
+  "duration": 4744385389,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.enterAndSelectArrivalAirportName()"
 });
 formatter.result({
-  "duration": 2674845398,
+  "duration": 4204484606,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.selectDepartureDate()"
 });
 formatter.result({
-  "duration": 493303463,
+  "duration": 829754099,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.selectReturnDate()"
 });
 formatter.result({
-  "duration": 498585599,
+  "duration": 776941748,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.selectTheIndividualCounts()"
 });
 formatter.result({
-  "duration": 432958255,
+  "duration": 1198378582,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.clickOnSearchFlights()"
 });
 formatter.result({
-  "duration": 851190244,
+  "duration": 1509403943,
   "status": "passed"
 });
 formatter.match({
   "location": "CleartripAutomationSteps.viewListOfAvailableFlights()"
 });
 formatter.result({
-  "duration": 19342138790,
-  "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: chrome\u003d71.0.3578.98)\n  (Driver info: chromedriver\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform\u003dWindows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 72 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html\nBuild info: version: \u00272.53.0\u0027, revision: \u002735ae25b1534ae328c771e0856c93e187490ca824\u0027, time: \u00272016-03-15 10:43:46\u0027\nSystem info: host: \u0027EPINPUNW0043\u0027, ip: \u002710.22.94.69\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_181\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, goog:chromeOptions\u003d{debuggerAddress\u003dlocalhost:53604}, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir\u003dC:\\Users\\RANADE~1\\AppData\\Local\\Temp\\scoped_dir3008_6271}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d71.0.3578.98, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: bdc67cea15cf166b090aa489730a5653\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:368)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:261)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:257)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)\r\n\tat com.epam.testautomation.cleartrip.pageobjectmodel.FlightSearchListPage.scrollAndLogAllFlightSearchList(FlightSearchListPage.java:69)\r\n\tat com.epam.testautomation.cleartrip.steps.CleartripAutomationSteps.viewListOfAvailableFlights(CleartripAutomationSteps.java:119)\r\n\tat ✽.Then I get list of available flights(Bookings.feature:34)\r\n",
+  "duration": 27458589671,
+  "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: chrome\u003d71.0.3578.98)\n  (Driver info: chromedriver\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform\u003dWindows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 1.39 seconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html\nBuild info: version: \u00272.53.0\u0027, revision: \u002735ae25b1534ae328c771e0856c93e187490ca824\u0027, time: \u00272016-03-15 10:43:46\u0027\nSystem info: host: \u0027LAPTOP-Q981VJ79\u0027, ip: \u0027192.168.1.5\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_181\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, goog:chromeOptions\u003d{debuggerAddress\u003dlocalhost:55265}, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir\u003dC:\\Users\\DEEPJO~1\\AppData\\Local\\Temp\\scoped_dir7688_1957}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d71.0.3578.98, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 7e2414c66f45073583247abf74025966\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:577)\r\n\tat com.epam.testautomation.cleartrip.pageobjectmodel.FlightSearchListPage.lambda$scrollAndLogAllFlightSearchList$0(FlightSearchListPage.java:71)\r\n\tat java.util.ArrayList.forEach(Unknown Source)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\n\tat java.lang.reflect.Method.invoke(Unknown Source)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)\r\n\tat com.sun.proxy.$Proxy30.forEach(Unknown Source)\r\n\tat com.epam.testautomation.cleartrip.pageobjectmodel.FlightSearchListPage.scrollAndLogAllFlightSearchList(FlightSearchListPage.java:71)\r\n\tat com.epam.testautomation.cleartrip.steps.CleartripAutomationSteps.viewListOfAvailableFlights(CleartripAutomationSteps.java:119)\r\n\tat ✽.Then I get list of available flights(Bookings.feature:34)\r\n",
   "status": "failed"
 });
 formatter.match({
@@ -464,6 +462,6 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 1371971910,
+  "duration": 3908220626,
   "status": "passed"
 });
