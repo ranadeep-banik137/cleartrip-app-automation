@@ -11,6 +11,7 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+
 import com.epam.testautomation.cleartrip.reporting.ExtentReportUtil;
 
 public class BasicTestFilterListener implements ITestListener, ISuiteListener, IInvokedMethodListener {
@@ -34,6 +35,7 @@ public class BasicTestFilterListener implements ITestListener, ISuiteListener, I
 	 */
 	@Override
 	public void onFinish(ISuite arg0) {
+		report.flushAndClose();
 		LOGGER.info("Terminating Suite : " + arg0.getName());
 	}
 
@@ -42,7 +44,7 @@ public class BasicTestFilterListener implements ITestListener, ISuiteListener, I
 	 * This belongs to ITestListener and will execute before starting of Test set/batch
 	 */
 	public void onStart(ITestContext arg0) {
-		report.getExtentReportInstance().startTest(arg0.getName());
+		report.generateTestsWithName(arg0.getName());
 		Reporter.log("About to begin executing Test " + arg0.getName(), true);
 
 	}
@@ -51,6 +53,7 @@ public class BasicTestFilterListener implements ITestListener, ISuiteListener, I
 	 * This belongs to ITestListener and will execute, once the Test set/batch is finished
 	 */
 	public void onFinish(ITestContext arg0) {
+		report.endsWithTestName();
 		Reporter.log("Completed executing test " + arg0.getName(), true);
 	}
 

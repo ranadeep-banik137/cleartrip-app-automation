@@ -17,7 +17,7 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(features = "src/test/java/com/epam/testautomation/cleartrip/features", glue ={"com.epam.testautomation.cleartrip.steps"},  monochrome = true, plugin = {"pretty", "html:src/test/resources/reports"}, tags = {"@All"})
-@Listeners(BasicTestFilterListener.class)
+@Listeners({ BasicTestFilterListener.class})
 public class BookingTestNgRunner {
 	
 	private Logger LOGGER = Logger.getLogger(BookingTestNgRunner.class.getName());
@@ -28,13 +28,13 @@ public class BookingTestNgRunner {
 		LOGGER.log(Level.INFO, "Initiating TestNG runner for automation of cleartrip application.");
 	}
 	
-	@Test(dataProvider = "features")
+	@Test(dataProvider = "features", groups = {"default"})
 	public void generateTest(CucumberFeatureWrapper features) {
 		LOGGER.info("Running cucumber feature file at classname : " + features.getCucumberFeature().getClass().getSimpleName());
 		this.runner.runCucumber(features.getCucumberFeature());
 	}
 	
-	@DataProvider(name = "features")
+	@DataProvider(name = "features", parallel = true)
 	public Object[][] getProviders() {
 		return this.runner.provideFeatures();
 	}

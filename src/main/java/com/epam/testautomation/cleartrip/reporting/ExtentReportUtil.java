@@ -59,6 +59,10 @@ public class ExtentReportUtil {
 		logger = extent.startTest(scenario);
 	}
 	
+	public void endsWithTestName() {
+		extent.endTest(logger);
+	}
+	
 	public void logAsPerTestStatus(int status, final String scenario) {
 		if (status == ITestResult.SUCCESS) {
 			logger.log(LogStatus.PASS, scenario, "Method : "+ scenario + " Passed");
@@ -68,12 +72,6 @@ public class ExtentReportUtil {
 		} else {
 			logger.log(LogStatus.SKIP, scenario, "Method : "+ scenario + " Skipped");
 		}
-	}
-	
-	public void terminate(int status, final String scenario) {
-		logAsPerTestStatus(status, scenario);
-		extent.endTest(logger);
-		flushAndClose();
 	}
 	
 	public ExtentReports getExtentReportInstance() {

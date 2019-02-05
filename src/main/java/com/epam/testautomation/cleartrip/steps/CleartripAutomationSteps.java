@@ -27,6 +27,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+@SuppressWarnings("deprecation")
 public class CleartripAutomationSteps {
 	
 	private static final Logger LOGGER = Logger.getLogger(CleartripAutomationSteps.class.getName());
@@ -159,7 +160,6 @@ public class CleartripAutomationSteps {
 		paymentPage.validateDefaultTravellerDetails();
 	}
 	
-	@SuppressWarnings("deprecation")
 	@After
 	public void end() {
 		String windowHandle = null;

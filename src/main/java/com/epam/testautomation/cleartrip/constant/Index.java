@@ -48,6 +48,8 @@ public interface Index {
 		
 		String TEST_XML = "execution-xml";
 		
+		String TEST_GROUP = "test-group";
+		
 	}
 	
 	interface Path {

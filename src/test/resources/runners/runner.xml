@@ -2,6 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Cleartrip_Automation_Suite">
+	<listeners>
+        <listener class-name="com.epam.testautomation.cleartrip.listeners.AnnotationTransformerListener"/>
+        <listener class-name="com.epam.testautomation.cleartrip.listeners.MethodInterceptorListener"></listener>
+    </listeners>
 	<test name="Test_Flight_Booking">
 	<!-- <groups>
 	<run>
